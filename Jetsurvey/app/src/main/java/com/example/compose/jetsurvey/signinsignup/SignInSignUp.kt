@@ -155,7 +155,7 @@ fun Email(
             keyboardType = KeyboardType.Email
         ),
         keyboardActions = KeyboardActions(
-            onAny = {
+            onDone = {
                 onImeAction()
             }
         ),
@@ -226,7 +226,7 @@ fun Password(
             keyboardType = KeyboardType.Password
         ),
         keyboardActions = KeyboardActions(
-            onAny = {
+            onDone = {
                 onImeAction()
             }
         ),
