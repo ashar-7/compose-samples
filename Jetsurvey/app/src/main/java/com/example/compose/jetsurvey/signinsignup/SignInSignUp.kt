@@ -56,7 +56,6 @@ import androidx.compose.ui.focus.FocusState
 import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
-import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.text.style.TextAlign
@@ -150,16 +149,12 @@ fun Email(
             },
         textStyle = MaterialTheme.typography.body2,
         isError = emailState.showErrors(),
-        keyboardOptions = KeyboardOptions.Default.copy(
-            imeAction = imeAction,
-            keyboardType = KeyboardType.Email
-        ),
+        keyboardOptions = KeyboardOptions.Default.copy(imeAction = imeAction),
         keyboardActions = KeyboardActions(
             onDone = {
                 onImeAction()
             }
-        ),
-        singleLine = true
+        )
     )
 
     emailState.getError()?.let { error -> TextFieldError(textError = error) }
@@ -221,16 +216,12 @@ fun Password(
             PasswordVisualTransformation()
         },
         isError = passwordState.showErrors(),
-        keyboardOptions = KeyboardOptions.Default.copy(
-            imeAction = imeAction,
-            keyboardType = KeyboardType.Password
-        ),
+        keyboardOptions = KeyboardOptions.Default.copy(imeAction = imeAction),
         keyboardActions = KeyboardActions(
             onDone = {
                 onImeAction()
             }
-        ),
-        singleLine = true
+        )
     )
 
     passwordState.getError()?.let { error -> TextFieldError(textError = error) }
